@@ -1,0 +1,678 @@
+/* Variáveis de Cores */
+:root {
+    --intelbras-green: #009933;
+    --intelbras-dark-green: #007326;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --medium-gray: #ccc;
+    --discount-red: #cc0000;
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+/* Header */
+.header {
+    border-bottom: 1px solid var(--light-gray);
+    padding: 10px 0;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--intelbras-green);
+}
+
+.search-bar {
+    display: flex;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 400px;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px 10px;
+    flex-grow: 1;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: var(--light-gray);
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.user-actions {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 10px auto 0;
+    padding: 0 20px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav li {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav li:hover {
+    border-bottom: 2px solid var(--intelbras-green);
+    color: var(--intelbras-green);
+}
+
+/* Main Content */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    padding-right: 20px;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    color: var(--intelbras-dark-green);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+}
+
+.filter-group h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.price-range-slider {
+    height: 5px;
+    background-color: var(--intelbras-green);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Product List */
+.product-list {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.banner {
+    background-color: #e6ffe6; /* Cor de fundo clara para o banner */
+    background-image: url('images/banner-bg.png'); /* Imagem de fundo do banner (se houver) */
+    background-size: cover;
+    background-position: right center;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    color: var(--intelbras-dark-green);
+}
+
+.banner h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 18px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Product Card */
+.product-card {
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-name {
+    font-size: 14px;
+    height: 40px; /* Para manter o alinhamento */
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.price-info {
+    margin-bottom: 10px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.discount {
+    background-color: var(--discount-red);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.current-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--intelbras-green);
+    margin-top: 5px;
+}
+
+.installment {
+    font-size: 12px;
+    color: #666;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.free-shipping, .install-option {
+    border: 1px solid var(--medium-gray);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.free-shipping {
+    color: var(--intelbras-green);
+    border-color: var(--intelbras-green);
+}
+
+.install-option {
+    background-color: var(--light-gray);
+}
+
+/* Estilização do Botão de Compra */
+.buy-button {
+    background-color: var(--intelbras-green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: var(--intelbras-dark-green);
+}
+
+/* Estilização do Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Fundo escuro */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% do topo e centralizado */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    max-width: 1000px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    gap: 30px;
+}
+
+.modal-image-area {
+    flex: 1;
+    text-align: center;
+}
+
+.modal-image-area img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+}
+
+.modal-details-area {
+    flex: 1;
+}
+
+.modal-details-area h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-details-area .product-code {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.modal-details-area .price-info {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+#modal-buy-button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#modal-add-to-cart {
+    width: 100%;
+    background-color: white;
+    color: var(--intelbras-green);
+    border: 1px solid var(--intelbras-green);
+}
+
+.product-description {
+    margin-top: 30px;
+    border-top: 1px solid var(--light-gray);
+    padding-top: 20px;
+}
+
+.product-description h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o trigger do modal */
+.product-card.product-trigger {
+    cursor: pointer;
+}
+
+.product-name.product-trigger {
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--intelbras-dark-green);
+}
+
+/* Refinamento do Modal de Detalhes (para simular o layout do PDF) */
+
+.modal-details-area .price-info {
+    /* Remover a borda inferior que estava no estilo anterior */
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-details-area .old-price {
+    display: block; /* Para que o "De:" fique em uma linha separada ou clara */
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.modal-details-area .discount {
+    /* Manter o estilo do desconto */
+    margin-left: 10px;
+}
+
+.modal-details-area .current-price {
+    font-size: 32px; /* Aumentar o tamanho da fonte do preço principal */
+    color: var(--intelbras-green);
+    margin: 5px 0;
+}
+
+.modal-details-area .installment {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#modal-add-to-cart {
+    /* Botão secundário */
+    background-color: white;
+    color: var(--intelbras-green);
+    border: 1px solid var(--intelbras-green);
+    margin-bottom: 20px;
+}
+
+.product-description {
+    /* Separar a descrição do bloco de compra */
+    margin-top: 30px;
+    border-top: 1px solid var(--light-gray);
+    padding-top: 20px;
+}
+
+.product-description h3 {
+    font-size: 18px;
+    color: var(--intelbras-dark-green);
+    margin-bottom: 10px;
+}
+
+.product-description p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Estilização da Galeria de Miniaturas no Modal */
+.thumbnail-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    overflow-x: auto; /* Permite scroll horizontal se houver muitas miniaturas */
+    padding-bottom: 10px;
+}
+
+.thumbnail-gallery img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.thumbnail-gallery img:hover,
+.thumbnail-gallery img.active {
+    border-color: var(--intelbras-green);
+}
+
+/* ==========================================================================
+   Responsividade Mobile
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* --- Cabeçalho --- */
+    .top-bar {
+        padding: 10px;
+    }
+
+    .top-bar .search-bar,
+    .top-bar .user-actions {
+        display: none; /* Oculta a barra de pesquisa e ações em mobile */
+    }
+
+    .top-bar .logo {
+        font-size: 24px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .main-nav {
+        display: none; /* Oculta a navegação principal em mobile */
+    }
+
+    /* --- Layout Principal --- */
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        display: none; /* Oculta a sidebar em mobile, como no exemplo */
+    }
+
+    .product-list {
+        width: 100%;
+    }
+
+    /* --- Banner --- */
+    .banner {
+        height: 100px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .banner h1 {
+        font-size: 18px;
+    }
+
+    .banner p {
+        font-size: 12px;
+    }
+
+    /* --- Grid de Produtos (2 colunas em mobile) --- */
+    .products-grid {
+        grid-template-columns: 1fr 1fr; /* 2 colunas em telas menores */
+        gap: 10px;
+    }
+
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-name {
+        font-size: 12px;
+        min-height: 30px;
+    }
+
+    .price-info .old-price,
+    .price-info .installment {
+        font-size: 10px;
+    }
+
+    .price-info .current-price {
+        font-size: 16px;
+    }
+
+    .price-info .discount {
+        font-size: 10px;
+        padding: 2px 5px;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .actions .free-shipping,
+    .actions .buy-button {
+        font-size: 10px;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    /* --- Modal de Detalhes --- */
+    .modal-content {
+        width: 95%;
+        margin: 2.5% auto;
+        padding: 10px;
+    }
+
+    .modal-body {
+        flex-direction: column; /* Imagem e detalhes em coluna */
+        gap: 10px;
+    }
+
+    .modal-details-area h2 {
+        font-size: 20px;
+    }
+
+    .modal-details-area .current-price {
+        font-size: 24px;
+    }
+
+    .thumbnail-gallery {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    /* --- Grid de Produtos (1 coluna em telas muito pequenas) --- */
+    .products-grid {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
+}
+
+/* Estilos para o Botão de Orçamento (WhatsApp) */
+.quote-button-container {
+    text-align: center;
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+.quote-button {
+    display: inline-block;
+    background-color: #25D366; /* Cor do WhatsApp */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.quote-button:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+}
+
+/* Estilos para o Rodapé e Redes Sociais */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.social-icon.whatsapp {
+    background-color: #25D366;
+}
+
+.social-icon.instagram {
+    background-color: #E1306C;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+}
+
+.footer p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .quote-button {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+
+    .social-icon {
+        padding: 8px 12px;
+        margin: 0 5px;
+    }
+}
